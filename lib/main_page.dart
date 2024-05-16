@@ -1,30 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:adal/add_user.dart';
+import 'package:provider/provider.dart';
 import 'package:adal/api_handler.dart';
 import 'package:adal/edit_page.dart';
 import 'package:adal/find_user.dart';
 import 'package:adal/model.dart';
+import 'package:adal/Auth/LoginAuthProvider.dart';
+import './Auth/AuthScreens/login.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+  const MainPage({Key? key}) : super(key: key);
 
   @override
   State<MainPage> createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
+  void _logout(BuildContext context) {
+    Provider.of<LoginAuthProvider>(context, listen: false).logout(context);
+  }
+
   ApiHandler apiHandler = ApiHandler();
-  late List<User> data = [];
+  List<User> data = [];
 
   void getData() async {
-    data = await apiHandler.getUserData();
-    print("ApiData: $data");
-    setState(() {});
+    List<User> fetchedData = await apiHandler.getUserData();
+    setState(() {
+      data = fetchedData;
+    });
   }
 
   void deleteUser(int userId) async {
     await apiHandler.deleteUser(id: userId);
-    setState(() {});
+    getData(); // Refresh data after deletion
   }
 
   @override
@@ -41,6 +49,12 @@ class _MainPageState extends State<MainPage> {
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 54, 142, 236),
         foregroundColor: Colors.white,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () => _logout(context),
+          ),
+        ],
       ),
       bottomNavigationBar: MaterialButton(
         color: Color.fromARGB(255, 50, 147, 237),
