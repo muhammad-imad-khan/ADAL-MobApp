@@ -14,7 +14,7 @@ class _LoginState extends State<Login> {
   String _username = '';
   String _password = '';
 
-  Future<void> _submit() async {
+  Future<void> _submit(BuildContext context) async {
     if (!_formKey.currentState!.validate()) {
       return;
     }
@@ -85,8 +85,16 @@ class _LoginState extends State<Login> {
                     ),
                     SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: _submit,
-                      child: Text('Login'),
+                      onPressed: () {
+                        _submit(context);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 76, 137, 175),
+                      ),
+                      child: Text(
+                        'Login',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     SizedBox(height: 10),
                     TextButton(

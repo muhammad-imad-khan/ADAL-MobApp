@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:adal/api_handler.dart';
-import 'package:adal/model.dart';
+import 'package:adal/User/api_handler.dart';
+import 'package:adal/User/model.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 
 class AddUser extends StatefulWidget {

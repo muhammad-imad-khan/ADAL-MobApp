@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../userModel.dart';
 import '../RegisterAuthProvider.dart';
-import 'login.dart'; // Import the login screen
+import '../AuthScreens/login.dart'; // Import the login screen
 
 class Register extends StatefulWidget {
   @override
@@ -28,8 +28,7 @@ class _RegisterState extends State<Register> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Registration successful')),
       );
-      Navigator.of(context)
-          .pushReplacementNamed('/login'); // Redirect to login screen
+      Navigator.of(context).pushReplacementNamed('/login');
     } catch (error) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Registration failed')),
@@ -52,6 +51,7 @@ class _RegisterState extends State<Register> {
             children: <Widget>[
               Image.network(
                 'https://png.pngtree.com/png-vector/20190303/ourmid/pngtree-attorney-law-scale-icon-design-template-vector-png-image_770961.jpg',
+
                 width: 250,
                 height: 300,
                 // Adjust width and height as needed
@@ -100,7 +100,15 @@ class _RegisterState extends State<Register> {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _submit,
-                child: Text('Register'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors
+                      .green, // Set the button's background color to green
+                ),
+                child: Text(
+                  'Register',
+                  style: TextStyle(
+                      color: Colors.white), // Set the font color to white
+                ),
               ),
               SizedBox(height: 10),
               TextButton(
