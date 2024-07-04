@@ -11,12 +11,12 @@ class IntroPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             ClipRRect(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(52),
               child: CachedNetworkImage(
                 imageUrl:
-                  'https://png.pngtree.com/png-vector/20190303/ourmid/pngtree-attorney-law-scale-icon-design-template-vector-png-image_770961.jpg',
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYmlbOfYd1XbyOBwmxbcsxuE48g8LcdQ9ZVg&s',
                 placeholder: (context, url) =>
                     CircularProgressIndicator(), // Placeholder widget while loading
                 errorWidget: (context, url, error) =>

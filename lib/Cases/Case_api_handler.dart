@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:adal/Cases/CaseModel.dart';
+import 'package:Adal/Cases/CaseModel.dart';
 import 'package:http/http.dart' as http;
 
 class ApiHandler {

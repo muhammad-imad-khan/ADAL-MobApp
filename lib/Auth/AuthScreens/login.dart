@@ -45,12 +45,13 @@ class _LoginState extends State<Login> {
           children: <Widget>[
             // Your logo widget here
             Image.network(
-              'https://png.pngtree.com/png-vector/20190303/ourmid/pngtree-attorney-law-scale-icon-design-template-vector-png-image_770961.jpg',
-              width: 250,
-              height: 300,
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYmlbOfYd1XbyOBwmxbcsxuE48g8LcdQ9ZVg&s',
+             width: 250,
+                height: 300,
+                fit: BoxFit.cover,
               // Adjust width and height as needed
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Form(

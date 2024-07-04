@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:adal/User/api_handler.dart';
-import 'package:adal/User/model.dart';
+import 'package:Adal/User/api_handler.dart';
+import 'package:Adal/User/model.dart';
 
 class FindUser extends StatefulWidget {
   const FindUser({super.key});

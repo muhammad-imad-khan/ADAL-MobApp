@@ -50,10 +50,10 @@ class _RegisterState extends State<Register> {
           child: Column(
             children: <Widget>[
               Image.network(
-                'https://png.pngtree.com/png-vector/20190303/ourmid/pngtree-attorney-law-scale-icon-design-template-vector-png-image_770961.jpg',
-
-                width: 250,
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYmlbOfYd1XbyOBwmxbcsxuE48g8LcdQ9ZVg&s',
+                 width: 250,
                 height: 300,
+                fit: BoxFit.cover,
                 // Adjust width and height as needed
               ),
               TextFormField(
@@ -101,8 +101,7 @@ class _RegisterState extends State<Register> {
               ElevatedButton(
                 onPressed: _submit,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors
-                      .green, // Set the button's background color to green
+                  backgroundColor: Color.fromARGB(255, 39, 123, 218), // Set the button's background color to green
                 ),
                 child: Text(
                   'Register',

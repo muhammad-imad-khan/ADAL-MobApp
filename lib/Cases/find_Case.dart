@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Case_api_handler.dart';
-import 'package:adal/Cases/CaseModel.dart';
+import 'package:Adal/Cases/CaseModel.dart';
 import 'CaseModel.dart';
 
 class FindCases extends StatefulWidget {

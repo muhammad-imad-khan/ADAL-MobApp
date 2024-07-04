@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:adal/User/model.dart';
+import 'package:Adal/User/model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiHandler {

@@ -1,4 +1,4 @@
-package com.example.adal
+package com.example.Adal
 
 import io.flutter.embedding.android.FlutterActivity
 

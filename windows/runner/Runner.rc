@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "adal" "\0"
+            VALUE "FileDescription", "Adal" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "adal" "\0"
+            VALUE "InternalName", "Adal" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "adal.exe" "\0"
-            VALUE "ProductName", "adal" "\0"
+            VALUE "OriginalFilename", "Adal.exe" "\0"
+            VALUE "ProductName", "Adal" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

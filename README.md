@@ -1,3 +1,3 @@
-# adal
+# Adal
 
 A new Flutter project.
