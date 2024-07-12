@@ -1,5 +1,4 @@
 import 'package:Adal/Auth/AuthScreens/login.dart';
-import 'package:Adal/Auth/AuthScreens/register.dart';
 import 'package:Adal/Auth/LoginAuthProvider.dart';
 import 'package:Adal/BarChart/BarChartMonthly.dart';
 import 'package:Adal/BarChart/BarChartWeekly.dart';
@@ -30,7 +29,6 @@ class MainApp extends StatelessWidget {
         initialRoute: '/intro',
         routes: {
           '/intro': (context) => IntroPage(),
-          '/register': (context) => Register(),
           '/login': (context) => Login(),
           '/main': (context) => MainPage(),
           '/case': (context) => CasePage(),

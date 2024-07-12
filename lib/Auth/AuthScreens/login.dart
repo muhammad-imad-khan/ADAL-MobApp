@@ -46,7 +46,7 @@ class _LoginState extends State<Login> {
             // Your logo widget here
             Image.network(
               'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYmlbOfYd1XbyOBwmxbcsxuE48g8LcdQ9ZVg&s',
-             width: 250,
+                width: 250,
                 height: 300,
                 fit: BoxFit.cover,
               // Adjust width and height as needed
@@ -76,7 +76,7 @@ class _LoginState extends State<Login> {
                       obscureText: true,
                       validator: (value) {
                         if (value == null || value.length < 6) {
-                          return 'Password must be at least 6 characters long.';
+                          return 'Enter the required fields, Password must be at least 6 characters long.';
                         }
                         return null;
                       },
@@ -96,13 +96,6 @@ class _LoginState extends State<Login> {
                         'Login',
                         style: TextStyle(color: Colors.white),
                       ),
-                    ),
-                    SizedBox(height: 10),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pushReplacementNamed('/register');
-                      },
-                      child: Text('Don\'t have an account? Register'),
                     ),
                   ],
                 ),
