@@ -3,12 +3,12 @@ import 'package:Adal/Cases/CaseModel.dart';
 import 'package:http/http.dart' as http;
 
 class ApiHandler {
-  final String baseUri = "https://d6ce-202-47-48-55.ngrok-free.app/api/SaleCases";
+  final String baseUri = "https://11c7-175-107-224-112.ngrok-free.app/api/Case";
 
   Future<List<Cases>> getCasesData() async {
     List<Cases> data = [];
 
-    final uri = Uri.parse("$baseUri/CasesListForAdmin");
+    final uri = Uri.parse("$baseUri");
     try {
       final response = await http.get(
         uri,

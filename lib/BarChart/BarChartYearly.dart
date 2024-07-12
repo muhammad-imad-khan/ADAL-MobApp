@@ -41,7 +41,7 @@ class BarChartYearly extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Orders By Yearly"),
+        title: const Text("Cases By Yearly"),
       ),
       body: Container(
         height: 300,

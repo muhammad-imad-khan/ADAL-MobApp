@@ -41,7 +41,7 @@ class BarChartWeekly extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Orders By Weekly"),
+        title: const Text("Cases By Weekly"),
       ),
       body: Container(
         height: 300,

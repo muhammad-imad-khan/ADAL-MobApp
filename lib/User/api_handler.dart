@@ -4,7 +4,7 @@ import 'package:Adal/User/model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiHandler {
-  final String baseUri = "https://d6ce-202-47-48-55.ngrok-free.app/api/Cases";
+  final String baseUri = "https://11c7-175-107-224-112.ngrok-free.app/api/Cases";
 
   Future<List<User>> getUserData() async {
     List<User> data = [];
