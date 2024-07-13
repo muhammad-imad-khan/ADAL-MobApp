@@ -250,13 +250,13 @@ class _CasePageState extends State<CasePage> {
                 ),
                 const SizedBox(height: 8),
                  Text(
-                  'Product Name: ${case_.name ?? ''}',
+                  'Name: ${case_.name ?? ''}',
                 ),
                 Text(
-                  'Advance Payment: ${case_.description}',
+                  'Description: ${case_.description}',
                 ),
                 Text(
-                  'Remaining Payment: ${case_.id}',
+                  'Code: ${case_.id}',
                 ),
                
               ],

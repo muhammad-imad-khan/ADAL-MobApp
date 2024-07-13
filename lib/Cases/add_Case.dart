@@ -58,21 +58,8 @@ class _AddCasesState extends State<AddCases> {
           child: Column(
             children: [
               FormBuilderTextField(
-                name: 'productId',
-                decoration: const InputDecoration(labelText: 'Product ID'),
-                keyboardType: TextInputType.number,
-                validator: FormBuilderValidators.compose([
-                  FormBuilderValidators.required(),
-                  FormBuilderValidators.numeric(),
-                ]),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              FormBuilderTextField(
-                name: 'customerId',
-                decoration: const InputDecoration(labelText: 'Customer ID'),
-                keyboardType: TextInputType.number,
+                name: 'name',
+                decoration: const InputDecoration(labelText: 'Name'),
                 validator: FormBuilderValidators.compose([
                   FormBuilderValidators.required(),
                   FormBuilderValidators.numeric(),
@@ -83,7 +70,7 @@ class _AddCasesState extends State<AddCases> {
               ),
               FormBuilderTextField(
                 name: 'customerName',
-                decoration: const InputDecoration(labelText: 'Customer Name'),
+                decoration: const InputDecoration(labelText: 'Description'),
                 validator: FormBuilderValidators.compose([
                   FormBuilderValidators.required(),
                 ]),
@@ -92,8 +79,17 @@ class _AddCasesState extends State<AddCases> {
                 height: 10,
               ),
               FormBuilderTextField(
-                name: 'quantity',
-                decoration: const InputDecoration(labelText: 'Quantity'),
+                name: 'categoryId',
+                decoration: const InputDecoration(labelText: 'Category ID'),
+                keyboardType: TextInputType.number,
+                validator: FormBuilderValidators.compose([
+                  FormBuilderValidators.required(),
+                  FormBuilderValidators.numeric(),
+                ]),
+              ),
+               FormBuilderTextField(
+                name: 'clientId',
+                decoration: const InputDecoration(labelText: 'Client ID'),
                 keyboardType: TextInputType.number,
                 validator: FormBuilderValidators.compose([
                   FormBuilderValidators.required(),
@@ -102,88 +98,6 @@ class _AddCasesState extends State<AddCases> {
               ),
               const SizedBox(
                 height: 10,
-              ),
-              FormBuilderTextField(
-                name: 'totalPrice',
-                decoration: const InputDecoration(labelText: 'Total Price'),
-                keyboardType: TextInputType.number,
-                validator: FormBuilderValidators.compose([
-                  FormBuilderValidators.required(),
-                  FormBuilderValidators.numeric(),
-                ]),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              FormBuilderTextField(
-                name: 'advancePayment',
-                decoration: const InputDecoration(labelText: 'Advance Payment'),
-                keyboardType: TextInputType.number,
-                validator: FormBuilderValidators.compose([
-                  FormBuilderValidators.required(),
-                  FormBuilderValidators.numeric(),
-                ]),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              FormBuilderTextField(
-                name: 'remainingPayment',
-                decoration: const InputDecoration(labelText: 'Remaining Payment'),
-                keyboardType: TextInputType.number,
-                validator: FormBuilderValidators.compose([
-                  FormBuilderValidators.required(),
-                  FormBuilderValidators.numeric(),
-                ]),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              FormBuilderTextField(
-                name: 'status',
-                decoration: const InputDecoration(labelText: 'Status'),
-                validator: FormBuilderValidators.compose([
-                  FormBuilderValidators.required(),
-                ]),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              FormBuilderTextField(
-                name: 'shippingId',
-                decoration: const InputDecoration(labelText: 'Shipping ID'),
-                keyboardType: TextInputType.number,
-                validator: FormBuilderValidators.compose([
-                  FormBuilderValidators.required(),
-                  FormBuilderValidators.numeric(),
-                ]),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              FormBuilderTextField(
-                name: 'paymentType',
-                decoration: const InputDecoration(labelText: 'Payment Type'),
-                validator: FormBuilderValidators.compose([
-                  FormBuilderValidators.required(),
-                ]),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              FormBuilderTextField(
-                name: 'shippingAddress',
-                decoration: const InputDecoration(labelText: 'Shipping Address'),
-                validator: FormBuilderValidators.compose([
-                  FormBuilderValidators.required(),
-                ]),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              FormBuilderCheckbox(
-                name: 'cashOnDelivery',
-                title: const Text('Cash on Delivery'),
               ),
             ],
           ),
