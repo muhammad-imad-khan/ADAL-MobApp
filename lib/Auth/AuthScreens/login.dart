@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../LoginAuthProvider.dart';
-import '../../main.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -23,8 +22,7 @@ class _LoginState extends State<Login> {
     try {
       await Provider.of<LoginAuthProvider>(context, listen: false)
           .login(_username, _password);
-      Navigator.of(context)
-          .pushReplacementNamed('/main'); // Redirect to main page after login
+      Navigator.of(context).pushReplacementNamed('/main'); // Redirect to main page after login
     } catch (error) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Login failed')),
@@ -38,6 +36,7 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         title: Text('Login'),
         centerTitle: true,
+        automaticallyImplyLeading: false, // This removes the back button
       ),
       body: Center(
         child: Column(
@@ -46,9 +45,9 @@ class _LoginState extends State<Login> {
             // Your logo widget here
             Image.network(
               'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYmlbOfYd1XbyOBwmxbcsxuE48g8LcdQ9ZVg&s',
-                width: 250,
-                height: 300,
-                fit: BoxFit.cover,
+              width: 250,
+              height: 300,
+              fit: BoxFit.cover,
               // Adjust width and height as needed
             ),
             SizedBox(height: 10),
@@ -62,7 +61,7 @@ class _LoginState extends State<Login> {
                       decoration: InputDecoration(labelText: 'Username'),
                       keyboardType: TextInputType.name,
                       validator: (value) {
-                        if (value == null) {
+                        if (value == null || value.isEmpty) {
                           return 'Please enter a valid Username.';
                         }
                         return null;

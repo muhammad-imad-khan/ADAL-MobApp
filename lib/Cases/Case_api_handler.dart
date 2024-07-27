@@ -3,12 +3,64 @@ import 'package:Adal/Cases/CaseModel.dart';
 import 'package:http/http.dart' as http;
 
 class ApiHandler {
-  final String baseUri = "https://11c7-175-107-224-112.ngrok-free.app/api/Case";
+  final String baseUri = "https://e941-202-47-48-55.ngrok-free.app";
 
   Future<List<Cases>> getCasesData() async {
     List<Cases> data = [];
 
-    final uri = Uri.parse("$baseUri");
+    final uri = Uri.parse("$baseUri/api/Cases/AllCaseList");
+    try {
+      final response = await http.get(
+        uri,
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+      );
+
+      if (response.statusCode >= 200 && response.statusCode <= 299) {
+        final List<dynamic> jsonData = json.decode(response.body);
+        print(jsonData);
+        data = jsonData.map((json) => Cases.fromJson(json)).toList();
+      } else {
+        throw Exception('Failed to load Cases data');
+      }
+    } catch (e) {
+      print('Error fetching Casess: $e');
+      throw Exception('Error fetching Casess: $e');
+    }
+    return data;
+  }
+
+   Future<List<Cases>> getClientCasesData() async {
+    List<Cases> data = [];
+
+    final uri = Uri.parse("$baseUri/api/Cases/AllCaseList");
+    try {
+      final response = await http.get(
+        uri,
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+      );
+
+      if (response.statusCode >= 200 && response.statusCode <= 299) {
+        final List<dynamic> jsonData = json.decode(response.body);
+        print(jsonData);
+        data = jsonData.map((json) => Cases.fromJson(json)).toList();
+      } else {
+        throw Exception('Failed to load Cases data');
+      }
+    } catch (e) {
+      print('Error fetching Casess: $e');
+      throw Exception('Error fetching Casess: $e');
+    }
+    return data;
+  }
+
+   Future<List<Cases>> getLawyerCasesData() async {
+    List<Cases> data = [];
+
+    final uri = Uri.parse("$baseUri/api/Cases/GetCaseLawyer");
     try {
       final response = await http.get(
         uri,
