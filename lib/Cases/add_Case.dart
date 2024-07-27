@@ -22,7 +22,11 @@ class _AddCasesState extends State<AddCases> {
       final case_ = Cases(
         id: 0,
         name: '',
+        clientName: '',
         description: '',
+        comment: '',
+        status: '',
+        offer: 0,
         categoryId: 0,
         clientId: 0,
       );

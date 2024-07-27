@@ -183,6 +183,18 @@ class _LawyerCasePageState extends State<LawyerCasePage> {
                 Text(
                   'Code: ${case_.id}',
                 ),
+                 Text(
+                  'Client: ${case_.clientName}',
+                ),
+                  Text(
+                  'Client: ${case_.comment}',
+                ),
+                   Text(
+                  'Client: ${case_.offer}',
+                ),
+                  Text(
+                  'Client: ${case_.status}',
+                ),
                
               ],
             ),

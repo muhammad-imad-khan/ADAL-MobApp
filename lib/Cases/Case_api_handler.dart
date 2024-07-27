@@ -5,83 +5,89 @@ import 'package:http/http.dart' as http;
 class ApiHandler {
   final String baseUri = "https://e941-202-47-48-55.ngrok-free.app";
 
-  Future<List<Cases>> getCasesData() async {
-    List<Cases> data = [];
+ Future<List<Cases>> getCasesData() async {
+  List<Cases> data = [];
 
-    final uri = Uri.parse("$baseUri/api/Cases/AllCaseList");
-    try {
-      final response = await http.get(
-        uri,
-        headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF-8',
-        },
-      );
+  final uri = Uri.parse("$baseUri/api/Cases/AllCaseList");
+  try {
+    final response = await http.get(
+      uri,
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+    );
 
-      if (response.statusCode >= 200 && response.statusCode <= 299) {
-        final List<dynamic> jsonData = json.decode(response.body);
-        print(jsonData);
-        data = jsonData.map((json) => Cases.fromJson(json)).toList();
-      } else {
-        throw Exception('Failed to load Cases data');
-      }
-    } catch (e) {
-      print('Error fetching Casess: $e');
-      throw Exception('Error fetching Casess: $e');
+    if (response.statusCode >= 200 && response.statusCode <= 299) {
+      final responseBody = json.decode(response.body);
+      final List<dynamic> jsonData = responseBody['data']; // Extract 'data' field
+      print(jsonData);
+      data = jsonData.map((json) => Cases.fromJson(json)).toList();
+    } else {
+      throw Exception('Failed to load Cases data');
     }
-    return data;
+  } catch (e) {
+    print('Error fetching Cases: $e');
+    throw Exception('Error fetching Cases: $e');
   }
+  return data;
+}
 
-   Future<List<Cases>> getClientCasesData() async {
-    List<Cases> data = [];
 
-    final uri = Uri.parse("$baseUri/api/Cases/AllCaseList");
-    try {
-      final response = await http.get(
-        uri,
-        headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF-8',
-        },
-      );
+  Future<List<Cases>> getClientCasesData() async {
+  List<Cases> data = [];
 
-      if (response.statusCode >= 200 && response.statusCode <= 299) {
-        final List<dynamic> jsonData = json.decode(response.body);
-        print(jsonData);
-        data = jsonData.map((json) => Cases.fromJson(json)).toList();
-      } else {
-        throw Exception('Failed to load Cases data');
-      }
-    } catch (e) {
-      print('Error fetching Casess: $e');
-      throw Exception('Error fetching Casess: $e');
+  final uri = Uri.parse("$baseUri/api/Cases/AllCaseList");
+  try {
+    final response = await http.get(
+      uri,
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+    );
+
+    if (response.statusCode >= 200 && response.statusCode <= 299) {
+      final responseBody = json.decode(response.body);
+      final List<dynamic> jsonData = responseBody['data']; // Extract 'data' field
+      print(jsonData);
+      data = jsonData.map((json) => Cases.fromJson(json)).toList();
+    } else {
+      throw Exception('Failed to load Cases data');
     }
-    return data;
+  } catch (e) {
+    print('Error fetching Cases: $e');
+    throw Exception('Error fetching Cases: $e');
   }
+  return data;
+}
 
-   Future<List<Cases>> getLawyerCasesData() async {
-    List<Cases> data = [];
 
-    final uri = Uri.parse("$baseUri/api/Cases/GetCaseLawyer");
-    try {
-      final response = await http.get(
-        uri,
-        headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF-8',
-        },
-      );
+ Future<List<Cases>> getLawyerCasesData() async {
+  List<Cases> data = [];
 
-      if (response.statusCode >= 200 && response.statusCode <= 299) {
-        final List<dynamic> jsonData = json.decode(response.body);
-        print(jsonData);
-        data = jsonData.map((json) => Cases.fromJson(json)).toList();
-      } else {
-        throw Exception('Failed to load Cases data');
-      }
-    } catch (e) {
-      print('Error fetching Casess: $e');
-      throw Exception('Error fetching Casess: $e');
+  final uri = Uri.parse("$baseUri/api/Cases/GetCaseLawyer");
+  try {
+    final response = await http.get(
+      uri,
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+    );
+
+    if (response.statusCode >= 200 && response.statusCode <= 299) {
+      final responseBody = json.decode(response.body);
+      final List<dynamic> jsonData = responseBody['data']; // Extract 'data' field
+      print(jsonData);
+      data = jsonData.map((json) => Cases.fromJson(json)).toList();
+    } else {
+      throw Exception('Failed to load Cases data');
     }
-    return data;
+  } catch (e) {
+    print('Error fetching Cases: $e');
+    throw Exception('Error fetching Cases: $e');
   }
+  return data;
+}
+
 
   Future<http.Response> updateCases({required int id, required Cases case_}) async {
     final uri = Uri.parse("$baseUri/Update/$id");

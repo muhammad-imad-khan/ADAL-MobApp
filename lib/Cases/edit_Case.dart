@@ -24,11 +24,15 @@ class _EditCasesState extends State<EditCases> {
         final data = _formKey.currentState!.value;
 
         final updatedCases = Cases(
-          id: 0,
-          name: '',
-          description: '',
-          categoryId: 0,
-          clientId: 0,
+         id: 0,
+        name: '',
+        clientName: '',
+        description: '',
+        comment: '',
+        status: '',
+        offer: 0,
+        categoryId: 0,
+        clientId: 0,
         );
 
         response = await apiHandler.updateCases(id: widget.case_.id, case_: updatedCases);
